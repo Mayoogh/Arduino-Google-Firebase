@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "201867887464",
+    "firebase_url": "https://marsrover-cf22c.firebaseio.com",
+    "project_id": "marsrover-cf22c",
+    "storage_bucket": "marsrover-cf22c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:201867887464:android:a68c18cb9b5fbf4f",
+        "android_client_info": {
+          "package_name": "com.example.girish.googlefirebaseledcontrol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "201867887464-s9c7h8e9d3jl1d0cmfr4p4fcr5fin04l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.girish.googlefirebaseledcontrol",
+            "certificate_hash": "5636684baf76694a1a20afc40ab8dfd134f0ae84"
+          }
+        },
+        {
+          "client_id": "201867887464-l93bk4esq91iovkajtdqu2q7kip9ookv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvwmIVGy34auNLJeWB6u18oeWHOYRre00"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "201867887464-l93bk4esq91iovkajtdqu2q7kip9ookv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
