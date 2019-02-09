@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Google Firebase Led Control</string>
+    <string name="temp">Temperature</string>
+    <string name="loading">Loading</string>
+    <string name="Left">Left</string>
+    <string name="Right">Right</string>
+    <string name="Forward">Forward</string>
+    <string name="Backward">Backward</string>
 </resources>
+
+
