@@ -4,21 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fffff "
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="81dp">
 
-   <!-- <TextureView
+    <!-- <TextureView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
         !-->
 
     <Button
         android:id="@+id/on"
-        android:layout_width="150dp"
+        android:layout_width="105dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="42dp"
-        android:layout_marginTop="165dp"
-        android:text="ON LED"
+        android:layout_marginBottom="58dp"
+        android:layout_marginTop="155dp"
+        android:background="#f44336 "
+        android:text="ON"
         android:textSize="16dp"
         app:layout_constraintBottom_toTopOf="@+id/off"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,9 +30,10 @@
 
     <Button
         android:id="@+id/off"
-        android:layout_width="150dp"
+        android:layout_width="105dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="204dp"
+        android:layout_marginBottom="206dp"
+        android:background="#2196F3 "
         android:text="OFF LED"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
