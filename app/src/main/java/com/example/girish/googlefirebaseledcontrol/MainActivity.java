@@ -32,23 +32,18 @@ public class MainActivity extends AppCompatActivity {
         left = (Button)findViewById(R.id.left_id);
         right = (Button)findViewById(R.id.right_id);
         text_temp = (TextView)findViewById(R.id.txt_temp_id);
-
         myDB_Ref = FirebaseDatabase.getInstance().getReference();
         myDB_Ref.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                status = dataSnapshot.getValue(String.class);
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                status = dataSnapshot.child("Temperature").getValue().toString();
                 text_temp.setText(status);
-
             }
-
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            public void onCancelled(DatabaseError databaseError) {
 
             }
         });
-
-
 
         forward.setOnClickListener(new View.OnClickListener(){
             @Override
