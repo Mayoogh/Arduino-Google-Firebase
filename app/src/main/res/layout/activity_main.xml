@@ -8,148 +8,221 @@
 
     <Button
         android:id="@+id/s1_On_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="16dp"
         android:text="S1 ON"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/s2_On_id"
+        app:layout_constraintEnd_toStartOf="@+id/s1_Off_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/s2_On_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginStart="41dp"
         android:text="S2 ON"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="74dp" />
+        app:layout_constraintBottom_toTopOf="@+id/s3_On_id"
+        app:layout_constraintEnd_toStartOf="@+id/s2_Off_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/s1_On_id" />
 
     <Button
         android:id="@+id/s3_On_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginStart="41dp"
         android:text="S3 ON"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="135dp" />
+        app:layout_constraintBottom_toTopOf="@+id/s4_On_id"
+        app:layout_constraintEnd_toStartOf="@+id/s3_Off_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/s2_On_id" />
 
     <Button
         android:id="@+id/s4_On_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginStart="41dp"
         android:text="S4 ON"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="198dp" />
+        app:layout_constraintBottom_toTopOf="@+id/s5_On_id"
+        app:layout_constraintEnd_toStartOf="@+id/s4_Off_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/s3_On_id" />
 
     <Button
         android:id="@+id/s5_On_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginStart="41dp"
         android:text="S5 ON"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="261dp" />
+        app:layout_constraintBottom_toTopOf="@+id/s6_On_id"
+        app:layout_constraintEnd_toStartOf="@+id/s5_Off_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/s4_On_id" />
 
     <Button
         android:id="@+id/s6_On_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginStart="41dp"
         android:text="S6 ON"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="326dp" />
+        app:layout_constraintBottom_toTopOf="@+id/s7_On_id"
+        app:layout_constraintEnd_toStartOf="@+id/s6_Off_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/s5_On_id" />
 
     <Button
         android:id="@+id/s7_On_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginStart="41dp"
         android:text="S7 ON"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="387dp" />
+        app:layout_constraintBottom_toTopOf="@+id/s8_On_id"
+        app:layout_constraintEnd_toStartOf="@+id/s7_Off_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/s6_On_id" />
 
     <Button
         android:id="@+id/s8_On_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginStart="41dp"
         android:text="S8 ON"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="41dp"
-        tools:layout_editor_absoluteY="445dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/s8_Off_id"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/s7_On_id" />
 
     <Button
         android:id="@+id/s1_Off_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
         android:text="S1 OFF"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/s2_Off_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/s1_On_id"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/s2_Off_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginEnd="16dp"
         android:text="S2 OFF"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="74dp" />
+        app:layout_constraintBottom_toTopOf="@+id/s3_Off_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/s2_On_id"
+        app:layout_constraintTop_toBottomOf="@+id/s1_Off_id" />
 
     <Button
         android:id="@+id/s3_Off_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="16dp"
         android:text="S3 OFF"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="135dp" />
+        app:layout_constraintBottom_toTopOf="@+id/s4_Off_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/s3_On_id"
+        app:layout_constraintTop_toBottomOf="@+id/s2_Off_id" />
 
     <Button
         android:id="@+id/s4_Off_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="13dp"
+        android:layout_marginEnd="16dp"
         android:text="S4 OFF"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="198dp" />
+        app:layout_constraintBottom_toTopOf="@+id/s5_Off_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/s4_On_id"
+        app:layout_constraintTop_toBottomOf="@+id/s3_Off_id" />
 
     <Button
         android:id="@+id/s5_Off_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="16dp"
         android:text="S5 OFF"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="261dp" />
+        app:layout_constraintBottom_toTopOf="@+id/s6_Off_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/s5_On_id"
+        app:layout_constraintTop_toBottomOf="@+id/s4_Off_id" />
 
     <Button
         android:id="@+id/s6_Off_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginEnd="16dp"
         android:text="S6 OFF"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="326dp" />
+        app:layout_constraintBottom_toTopOf="@+id/s7_Off_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/s6_On_id"
+        app:layout_constraintTop_toBottomOf="@+id/s5_Off_id" />
 
     <Button
         android:id="@+id/s7_Off_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="16dp"
         android:text="S7 OFF"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="387dp" />
+        app:layout_constraintBottom_toTopOf="@+id/s8_Off_id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/s7_On_id"
+        app:layout_constraintTop_toBottomOf="@+id/s6_Off_id" />
 
     <Button
         android:id="@+id/s8_Off_id"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
         android:text="S8 OFF"
         android:textSize="18dp"
-        tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="445dp" />
-
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/s8_On_id"
+        app:layout_constraintTop_toBottomOf="@+id/s7_Off_id" />
 
 
 </android.support.constraint.ConstraintLayout>
