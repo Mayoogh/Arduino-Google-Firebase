@@ -34,19 +34,19 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="120dp"
-        android:text="@string/Left"
+        android:layout_marginTop="128dp"
+        android:text="Right"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/right_id"
-        android:layout_width="0dp"
+        android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginTop="120dp"
-        android:text="@string/Right"
+        android:layout_marginEnd="36dp"
+        android:layout_marginTop="128dp"
+        android:text="Left"
         android:textSize="16sp"
         app:layout_constraintEnd_toStartOf="@+id/left_id"
         app:layout_constraintTop_toTopOf="parent" />
@@ -74,6 +74,56 @@
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/txtview"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/topL_id"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="204dp"
+        android:layout_marginTop="16dp"
+        android:text="TOP L"
+        app:layout_constraintBottom_toTopOf="@+id/right_id"
+        app:layout_constraintStart_toEndOf="@+id/forward_id"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/topR_id"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="16dp"
+        android:text="Top R"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/topL_id"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/backR_id"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginTop="16dp"
+        android:text="Bottom L"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/backL_id"
+        app:layout_constraintTop_toBottomOf="@+id/right_id"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/backL_id"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Bottom R"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/left_id" />
 
 
 </android.support.constraint.ConstraintLayout>
