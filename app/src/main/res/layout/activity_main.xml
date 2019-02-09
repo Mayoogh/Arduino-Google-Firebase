@@ -17,28 +17,44 @@
         android:id="@+id/on"
         android:layout_width="105dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="58dp"
-        android:layout_marginTop="155dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:background="#f44336 "
         android:text="ON"
         android:textSize="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/off"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/off" />
 
 
     <Button
         android:id="@+id/off"
         android:layout_width="105dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="206dp"
         android:background="#2196F3 "
         android:text="OFF LED"
         android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/on" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="108dp" />
+
+    <Button
+        android:id="@+id/left"
+        android:layout_width="105dp"
+        android:layout_height="0dp"
+        android:background="#2196F3 "
+        android:text="OFF LED"
+        android:textSize="16dp"
+        tools:layout_editor_absoluteX="442dp"
+        tools:layout_editor_absoluteY="145dp" />
+
+    <Button
+        android:id="@+id/right"
+        android:layout_width="105dp"
+        android:layout_height="0dp"
+        android:background="#2196F3 "
+        android:text="OFF LED"
+        android:textSize="16dp"
+        tools:layout_editor_absoluteX="284dp"
+        tools:layout_editor_absoluteY="145dp" />
+
 
 </android.support.constraint.ConstraintLayout>
