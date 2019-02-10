@@ -1,12 +1,23 @@
 package com.example.girish.googlefirebaseledcontrol;
 
+import java.util.ArrayList;
+import java.util.Locale;
+
 import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.text.InputType;
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Menu;
 import android.widget.Button;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.speech.RecognizerIntent;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,10 +32,13 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
 
     Button forward, backward, left, right, topL, topR, bottomL, bottomR;
+    ImageButton micBtn;
     Switch speed;
-    TextView text_temp;
+    TextView text_temp, speech_txt;
     DatabaseReference myDB_Ref;
     String status;
+    private final int REQ_CODE_SPEECH_INPUT = 100;
+
 
 
     @SuppressLint("ClickableViewAccessibility")
@@ -33,16 +47,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        forward = (Button)findViewById(R.id.forward_id);
-        backward = (Button)findViewById(R.id.backward_id);
-        left = (Button)findViewById(R.id.left_id);
-        right = (Button)findViewById(R.id.right_id);
-        topL = (Button)findViewById(R.id.topL_id);
-        topR = (Button)findViewById(R.id.topR_id);
-        bottomR = (Button)findViewById(R.id.backR_id);
-        bottomL = (Button)findViewById(R.id.backL_id);
-        speed = (Switch)findViewById(R.id.speed_id);
-        text_temp = (TextView)findViewById(R.id.txt_temp_id);
+        forward = findViewById(R.id.forward_id);
+        backward = findViewById(R.id.backward_id);
+        left = findViewById(R.id.left_id);
+        right =  findViewById(R.id.right_id);
+        topL =  findViewById(R.id.topL_id);
+        topR =  findViewById(R.id.topR_id);
+        bottomR =  findViewById(R.id.backR_id);
+        bottomL = findViewById(R.id.backL_id);
+        micBtn =  findViewById(R.id.btnSpeak_id);
+        speed =  findViewById(R.id.speed_id);
+        speech_txt =  findViewById(R.id.speed_id);
+        text_temp =  findViewById(R.id.txt_temp_id);
+
+
         myDB_Ref = FirebaseDatabase.getInstance().getReference();
         myDB_Ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -50,12 +68,16 @@ public class MainActivity extends AppCompatActivity {
                 status = dataSnapshot.child("Temperature").getValue().toString();
                 text_temp.setText(status);
             }
+
             @Override
             public void onCancelled(DatabaseError databaseError) {
 
             }
         });
 
+        /**
+         * Movements
+         **/
         forward.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
@@ -185,7 +207,112 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        micBtn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                promptSpeechInput();
+            }
+        });
     }
+
+    /**
+     * Showing google speech input dialog
+     */
+    private void promptSpeechInput() {
+        Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT,
+                getString(R.string.speech_prompt));
+        try {
+            startActivityForResult(intent, REQ_CODE_SPEECH_INPUT);
+        } catch (ActivityNotFoundException a) {
+            Toast.makeText(getApplicationContext(),
+                    getString(R.string.speech_not_supported),
+                    Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /**
+     * Receiving speech input
+     */
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+            case REQ_CODE_SPEECH_INPUT: {
+                if (resultCode == RESULT_OK && null != data) {
+
+                    ArrayList<String> result = data
+                            .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
+                    speech_txt.setText(result.get(0));
+                    speech_txt.setInputType(InputType.TYPE_CLASS_TEXT);
+                    if (result.get(0).equals("forward")){
+                        Toast.makeText(getApplicationContext(), "Moving Forward", Toast.LENGTH_SHORT).show();
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("S1");
+                        myRef.setValue(1);
+                    }
+                    else if (result.get(0).equals("backward")){
+                        Toast.makeText(getApplicationContext(), "Moving Backward", Toast.LENGTH_SHORT).show();
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("S1");
+                        myRef.setValue(2);
+                    }
+                    else if (result.get(0).equals("right")){
+                        Toast.makeText(getApplicationContext(), "Making hard right", Toast.LENGTH_SHORT).show();
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("S1");
+                        myRef.setValue(3);
+                    }
+                    else if (result.get(0).equals("left")){
+                        Toast.makeText(getApplicationContext(), "Making hard left", Toast.LENGTH_SHORT).show();
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("S1");
+                        myRef.setValue(4);
+                    }
+                    else if (result.get(0).equals("top left")){
+                        Toast.makeText(getApplicationContext(), "Turning left in forward direction", Toast.LENGTH_SHORT).show();
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("S1");
+                        myRef.setValue(5);
+                    }
+                    else if (result.get(0).equals("top right")){
+                        Toast.makeText(getApplicationContext(), "Turning right in forward direction ", Toast.LENGTH_SHORT).show();
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("S1");
+                        myRef.setValue(6);
+                    }
+                    else if (result.get(0).equals("bottom left")){
+                        Toast.makeText(getApplicationContext(), "Turning left in backward direction", Toast.LENGTH_SHORT).show();
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("S1");
+                        myRef.setValue(7);
+                    }
+                    else if (result.get(0).equals("bottom right")){
+                        Toast.makeText(getApplicationContext(), "Turning right in backward direction", Toast.LENGTH_SHORT).show();
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        DatabaseReference myRef = database.getReference("S1");
+                        myRef.setValue(8);
+                    }
+                    else
+                        Toast.makeText(getApplicationContext(), "Unknown command", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            }
+
+        }
+    }
+
+//    @Override
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        // Inflate the menu; this adds items to the action bar if it is present.
+////        getMenuInflater().inflate(R.menu.main, menu);
+//        return true;
+//    }
 
     public void speed_control(View view) {
         String Switchstatus;
