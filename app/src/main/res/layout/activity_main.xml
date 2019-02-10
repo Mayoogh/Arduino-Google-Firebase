@@ -125,8 +125,8 @@
         android:id="@+id/speed_id"
         android:layout_width="wrap_content"
         android:layout_height="34dp"
-        android:layout_marginBottom="200dp"
-        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="196dp"
+        android:layout_marginEnd="160dp"
         android:checked="true"
         android:onClick="speed_control"
         android:text="Speed   "
@@ -136,6 +136,25 @@
         android:textOn="Speed High"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/right_id" />
+
+    <TextView
+        android:id="@+id/speech_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="96dp"
+        android:layout_marginEnd="112dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/backR_id" />
+
+    <ImageButton
+        android:id="@+id/btnSpeak_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:layout_marginStart="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/backward_id"
+        app:srcCompat="@android:drawable/ic_btn_speak_now" />
 
 
 </android.support.constraint.ConstraintLayout>
