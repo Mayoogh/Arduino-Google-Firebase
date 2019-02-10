@@ -8,6 +8,7 @@
     tools:layout_editor_absoluteY="25dp">
 
     <Button
+        android:textColor="@color/colorPrimary"
         android:id="@+id/forward_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -19,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:textColor="@color/colorPrimary"
         android:id="@+id/backward_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
@@ -30,100 +32,110 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
+        android:textColor="@color/colorPrimary"
         android:id="@+id/left_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="140dp"
         android:text="Right"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:textColor="@color/colorPrimary"
         android:id="@+id/right_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginTop="140dp"
         android:text="Left"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/left_id"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/txtview"
-        android:layout_width="105dp"
-        android:layout_height="27dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="120dp"
-        android:text="@string/temp"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toStartOf="@+id/right_id"
-        app:layout_constraintHorizontal_bias="0.155"
-        app:layout_constraintStart_toEndOf="@+id/forward_id"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
+        android:textColor="@color/colorPrimary"
         android:id="@+id/txt_temp_id"
-        android:layout_width="38dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="120dp"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/txtview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="52dp"
+        android:text="12"
+        android:textSize="28sp"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:textColor="@color/colorPrimary"
         android:id="@+id/topL_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="204dp"
+        android:layout_marginEnd="160dp"
         android:layout_marginTop="16dp"
         android:text="TOP L"
-        app:layout_constraintBottom_toTopOf="@+id/right_id"
-        app:layout_constraintStart_toEndOf="@+id/forward_id"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:textColor="@color/colorPrimary"
         android:id="@+id/topR_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginStart="36dp"
         android:layout_marginTop="16dp"
         android:text="Top R"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/topL_id"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:textColor="@color/colorPrimary"
         android:id="@+id/backR_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="16dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginEnd="160dp"
         android:text="Bottom L"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/backL_id"
-        app:layout_constraintTop_toBottomOf="@+id/right_id"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
+        android:textColor="@color/colorPrimary"
         android:id="@+id/backL_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
         android:text="Bottom R"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/left_id" />
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/thermo_icon"
+        app:layout_constraintStart_toEndOf="@+id/forward_id"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/speed_id"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_marginBottom="200dp"
+        android:layout_marginEnd="108dp"
+        android:checked="true"
+        android:onClick="speed_control"
+        android:text="Speed   "
+        android:textColor="@color/colorPrimary"
+        android:textColorLink="@color/colorPrimary"
+        android:textOff="Speed Low"
+        android:textOn="Speed High"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/right_id" />
 
 
 </android.support.constraint.ConstraintLayout>
