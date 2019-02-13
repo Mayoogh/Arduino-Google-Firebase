@@ -8,106 +8,114 @@
     tools:layout_editor_absoluteY="25dp">
 
     <Button
-        android:textColor="@color/colorPrimary"
         android:id="@+id/forward_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginStart="36dp"
         android:layout_marginTop="64dp"
+        android:background="#4285F4"
         android:text="@string/Forward"
+        android:textColor="#ffffff"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textColor="@color/colorPrimary"
         android:id="@+id/backward_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="52dp"
         android:layout_marginStart="36dp"
+        android:background="#4285F4"
         android:text="@string/Backward"
+        android:textColor="#ffffff"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:textColor="@color/colorPrimary"
         android:id="@+id/left_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="132dp"
+        android:background="#4285F4"
         android:text="Right"
+        android:textColor="#ffffff"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textColor="@color/colorPrimary"
         android:id="@+id/right_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginEnd="160dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="132dp"
+        android:background="#4285F4"
         android:text="Left"
+        android:textColor="#ffffff"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:textColor="@color/colorPrimary"
         android:id="@+id/txt_temp_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="52dp"
-        android:text="12"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="100dp"
+        android:text="123"
+        android:textColor="#4285F4"
         android:textSize="28sp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textColor="@color/colorPrimary"
         android:id="@+id/topL_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginEnd="160dp"
         android:layout_marginTop="16dp"
+        android:background="#4285F4"
         android:text="TOP L"
+        android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textColor="@color/colorPrimary"
         android:id="@+id/topR_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
+        android:background="#4285F4"
         android:text="Top R"
+        android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:textColor="@color/colorPrimary"
         android:id="@+id/backR_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="160dp"
+        android:background="#4285F4"
         android:text="Bottom L"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:textColor="@color/colorPrimary"
         android:id="@+id/backL_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="16dp"
+        android:background="#4285F4"
         android:text="Bottom R"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -115,46 +123,104 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="36dp"
+        android:layout_marginStart="168dp"
+        android:layout_marginTop="16dp"
         android:src="@drawable/thermo_icon"
-        app:layout_constraintStart_toEndOf="@+id/forward_id"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
         android:id="@+id/speed_id"
-        android:layout_width="wrap_content"
-        android:layout_height="34dp"
-        android:layout_marginBottom="196dp"
-        android:layout_marginEnd="160dp"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="172dp"
+        android:layout_marginStart="160dp"
         android:checked="true"
         android:onClick="speed_control"
         android:text="Speed   "
-        android:textColor="@color/colorPrimary"
-        android:textColorLink="@color/colorPrimary"
+        android:textColor="#4285F4"
         android:textOff="Speed Low"
         android:textOn="Speed High"
+        android:textSize="20dp"
+        android:theme="@style/AppTheme"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/right_id" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/speech_id"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
-        android:layout_marginEnd="112dp"
+        android:layout_width="70dp"
+        android:layout_height="25dp"
+        android:textColor="#4285F4"
+        android:layout_marginBottom="16dp"
+        android:layout_marginStart="184dp"
+        android:text="Command"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/backR_id" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/btnSpeak_id"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="52dp"
+        android:layout_marginStart="172dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/mic" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="340dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/smoke" />
+
+    <TextView
+        android:id="@+id/smoke_id"
+        android:layout_width="73dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="350dp"
+        android:layout_marginTop="108dp"
+        android:text="FALSE"
+        android:textColor="#4285F4"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="70dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="244dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/humidity" />
+
+    <TextView
+        android:id="@+id/humidity_txt_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginTop="100dp"
+        android:text="123"
+        android:textColor="#4285F4"
+        android:textSize="28sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/camera_btn_id"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:onClick="On_Click_Camera"
+        android:layout_marginBottom="52dp"
+        android:layout_marginStart="300dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/backward_id"
-        app:srcCompat="@android:drawable/ic_btn_speak_now" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_camera" />
 
 
 </android.support.constraint.ConstraintLayout>
