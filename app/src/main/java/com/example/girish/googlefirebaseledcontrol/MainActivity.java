@@ -5,6 +5,7 @@ import java.util.Locale;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.net.Uri;
 import android.text.InputType;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -14,6 +15,9 @@ import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Menu;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -31,12 +35,14 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
+
     Button forward, backward, left, right, topL, topR, bottomL, bottomR;
-    ImageButton micBtn;
+    ImageButton micBtn, cammeraBtn;
     Switch speed;
-    TextView text_temp, speech_txt;
+    TextView text_temp, speech_txt, smoke_txt, humidity_txt;
     DatabaseReference myDB_Ref;
-    String status;
+    WebView myWebView;
+    String temp_status, smoke_status, humidity_status;
     private final int REQ_CODE_SPEECH_INPUT = 100;
 
 
@@ -46,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        hideNavigationBar();
 
         forward = findViewById(R.id.forward_id);
         backward = findViewById(R.id.backward_id);
@@ -57,16 +64,25 @@ public class MainActivity extends AppCompatActivity {
         bottomL = findViewById(R.id.backL_id);
         micBtn =  findViewById(R.id.btnSpeak_id);
         speed =  findViewById(R.id.speed_id);
-        speech_txt =  findViewById(R.id.speed_id);
+        humidity_txt = findViewById(R.id.humidity_txt_id);
+        speech_txt =  findViewById(R.id.speech_id);
         text_temp =  findViewById(R.id.txt_temp_id);
+        smoke_txt = findViewById(R.id.smoke_id);
+        cammeraBtn =  findViewById(R.id.camera_btn_id);
 
-
+        /**
+         * Pulling data from firebase
+         **/
         myDB_Ref = FirebaseDatabase.getInstance().getReference();
         myDB_Ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                status = dataSnapshot.child("Temperature").getValue().toString();
-                text_temp.setText(status);
+                temp_status = dataSnapshot.child("Temperature").getValue().toString();
+                text_temp.setText(temp_status);
+                smoke_status = dataSnapshot.child("Smoke").getValue().toString();
+                smoke_txt.setText(smoke_status);
+                humidity_status = dataSnapshot.child("Humidity").getValue().toString();
+                humidity_txt.setText(humidity_status);
             }
 
             @Override
@@ -76,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         /**
-         * Movements
+         * Button Movements
          **/
         forward.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -217,6 +233,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * FullScreen
+     **/
+    @Override
+    protected void onResume() {
+        super.onResume();
+        hideNavigationBar();
+    }
+
+    private void hideNavigationBar() {
+        this.getWindow().getDecorView()
+                .setSystemUiVisibility(
+                        View.SYSTEM_UI_FLAG_FULLSCREEN |
+                                View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+                                View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+                                View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                                View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
+                                View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                );
+    }
+
+    /**
      * Showing google speech input dialog
      */
     private void promptSpeechInput() {
@@ -307,13 +344,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-////        getMenuInflater().inflate(R.menu.main, menu);
-//        return true;
-//    }
-
+    /**
+     * Speed Switch
+     **/
     public void speed_control(View view) {
         String Switchstatus;
         if (speed.isChecked()){
@@ -329,6 +362,18 @@ public class MainActivity extends AppCompatActivity {
             myRef.setValue(1);
         }
         Toast.makeText(getApplicationContext(), "Speed :" + Switchstatus, Toast.LENGTH_LONG).show();
+    }
+
+
+    public void start_camera_activity(View view) {
+
+    }
+
+    public void On_Click_Camera(View view) {
+
+        Intent myIntent = new Intent(MainActivity.this,
+                CameraActivity.class);
+        startActivity(myIntent);
     }
 }
 
