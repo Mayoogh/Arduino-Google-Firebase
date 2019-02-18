@@ -6,6 +6,11 @@
     <string name="Right">Right</string>
     <string name="Forward">Forward</string>
     <string name="Backward">Backward</string>
+    <string name="speech_prompt">Say something</string>
+    <string name="speech_not_supported">Sorry! Your device do not support speech input</string>
+    <string name="zero">0</string>
+
+
 </resources>
 
 

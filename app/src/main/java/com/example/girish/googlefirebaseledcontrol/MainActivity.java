@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     Button forward, backward, left, right, topL, topR, bottomL, bottomR;
-    ImageButton micBtn, cammeraBtn;
+    ImageButton micBtn, cammeraBtn, armBtn;
     Switch speed;
     TextView text_temp, speech_txt, smoke_txt, humidity_txt;
     DatabaseReference myDB_Ref;
@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
         text_temp =  findViewById(R.id.txt_temp_id);
         smoke_txt = findViewById(R.id.smoke_id);
         cammeraBtn =  findViewById(R.id.camera_btn_id);
+        armBtn = findViewById(R.id.arm_btn_id);
 
         /**
          * Pulling data from firebase
@@ -365,7 +366,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void start_camera_activity(View view) {
+    public void  goto_arm_control(View view){
+
+        Intent myIntent = new Intent(MainActivity.this,
+                ArmActivity.class);
+        startActivity(myIntent);
+
 
     }
 

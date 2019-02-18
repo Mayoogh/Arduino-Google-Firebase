@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/DarkGrey"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="25dp">
 
@@ -11,9 +12,9 @@
         android:id="@+id/forward_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="64dp"
-        android:background="#4285F4"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/Amber"
         android:text="@string/Forward"
         android:textColor="#ffffff"
         android:textSize="16sp"
@@ -24,9 +25,9 @@
         android:id="@+id/backward_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="52dp"
-        android:layout_marginStart="36dp"
-        android:background="#4285F4"
+        android:layout_marginStart="35dp"
+        android:layout_marginBottom="60dp"
+        android:background="@color/Amber"
         android:text="@string/Backward"
         android:textColor="#ffffff"
         android:textSize="14sp"
@@ -37,59 +38,63 @@
         android:id="@+id/left_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="132dp"
-        android:background="#4285F4"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="44dp"
+        android:background="@color/Amber"
         android:text="Right"
         android:textColor="#ffffff"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/backL_id"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/topR_id" />
 
     <Button
         android:id="@+id/right_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginTop="132dp"
-        android:background="#4285F4"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="44dp"
+        android:background="@color/Amber"
         android:text="Left"
         android:textColor="#ffffff"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/backR_id"
+        app:layout_constraintEnd_toStartOf="@+id/left_id"
+        app:layout_constraintTop_toBottomOf="@+id/topL_id" />
 
     <TextView
         android:id="@+id/txt_temp_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="15dp"
         android:text="123"
-        android:textColor="#4285F4"
+        android:textColor="@color/Amber"
         android:textSize="28sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/forward_id"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/topL_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="160dp"
-        android:layout_marginTop="16dp"
-        android:background="#4285F4"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="40dp"
+        android:background="@color/Amber"
         android:text="TOP L"
         android:textColor="#ffffff"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/topR_id"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/topR_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"
-        android:background="#4285F4"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/Amber"
         android:text="Top R"
         android:textColor="#ffffff"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,21 +104,21 @@
         android:id="@+id/backR_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="160dp"
-        android:background="#4285F4"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/Amber"
         android:text="Bottom L"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/backL_id" />
 
     <Button
         android:id="@+id/backL_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="#4285F4"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/Amber"
         android:text="Bottom R"
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -121,39 +126,41 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="168dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/thermo_icon"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:src="@drawable/rhermometer100"
+        app:layout_constraintEnd_toStartOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
         android:id="@+id/speed_id"
         android:layout_width="125dp"
         android:layout_height="40dp"
-        android:layout_marginBottom="172dp"
-        android:layout_marginStart="160dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="15dp"
         android:checked="true"
         android:onClick="speed_control"
         android:text="Speed   "
-        android:textColor="#4285F4"
+        android:textColor="@color/Amber"
         android:textOff="Speed Low"
         android:textOn="Speed High"
         android:textSize="20dp"
         android:theme="@style/AppTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:thumbTint="@color/Amber"
+        android:trackTint="@color/Amber"
+        app:layout_constraintBottom_toTopOf="@+id/btnSpeak_id"
+        app:layout_constraintEnd_toStartOf="@+id/arm_btn_id" />
 
     <TextView
         android:id="@+id/speech_id"
         android:layout_width="70dp"
         android:layout_height="25dp"
-        android:textColor="#4285F4"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="184dp"
+        android:layout_marginStart="185dp"
+        android:layout_marginBottom="5dp"
         android:text="Command"
+        android:textColor="@color/Amber"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -161,66 +168,83 @@
         android:id="@+id/btnSpeak_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="52dp"
-        android:layout_marginStart="172dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/DarkGrey"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/mic" />
+        app:layout_constraintEnd_toStartOf="@+id/camera_btn_id"
+        app:srcCompat="@drawable/voicerecognition100" />
 
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:layout_marginStart="340dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/topL_id"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/smoke" />
+        app:srcCompat="@drawable/fire100" />
 
     <TextView
         android:id="@+id/smoke_id"
-        android:layout_width="73dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="350dp"
-        android:layout_marginTop="108dp"
+        android:layout_width="78dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
         android:text="FALSE"
-        android:textColor="#4285F4"
+        android:textColor="@color/Amber"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/right_id"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="70dp"
-        android:layout_height="66dp"
-        android:layout_marginStart="244dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/humidity" />
+        app:srcCompat="@drawable/hygrometer100" />
 
     <TextView
         android:id="@+id/humidity_txt_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="252dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
         android:text="123"
-        android:textColor="#4285F4"
+        android:textColor="@color/Amber"
         android:textSize="28sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/smoke_id"
+        app:layout_constraintHorizontal_bias="0.614"
+        app:layout_constraintStart_toEndOf="@+id/txt_temp_id"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
     <ImageButton
         android:id="@+id/camera_btn_id"
         android:layout_width="100dp"
         android:layout_height="100dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="30dp"
+        android:backgroundTint="@color/DarkGrey"
         android:onClick="On_Click_Camera"
-        android:layout_marginBottom="52dp"
-        android:layout_marginStart="300dp"
+        android:src="@drawable/webcam100"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@android:drawable/ic_menu_camera" />
+        app:layout_constraintEnd_toStartOf="@+id/backR_id" />
+
+    <ImageButton
+        android:id="@+id/arm_btn_id"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="5dp"
+        android:backgroundTint="@color/DarkGrey"
+        android:onClick="goto_arm_control"
+        android:src="@drawable/robot100"
+        app:layout_constraintBottom_toTopOf="@+id/camera_btn_id"
+        app:layout_constraintEnd_toStartOf="@+id/right_id" />
 
 
 </android.support.constraint.ConstraintLayout>
