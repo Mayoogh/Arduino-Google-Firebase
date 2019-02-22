@@ -6,9 +6,22 @@
     <string name="Right">Right</string>
     <string name="Forward">Forward</string>
     <string name="Backward">Backward</string>
+    <string name="Top_L">Top L</string>
+    <string name="Top_R">Top R</string>
+    <string name="Bottom_L">Bottom L</string>
+    <string name="Bottom_R">Bottom R</string>
+    <string name="Demo_temp">38</string>
+    <string name="Demo_humidity">78</string>
+    <string name="Demo_smoke">FALSE</string>
+    <string name="Speed_Low">Speed LOW</string>
+    <string name="Speed_High">Speed HIGH</string>
+    <string name="Speed">Speed </string>
+    <string name="Command">Commands</string>
     <string name="speech_prompt">Say something</string>
     <string name="speech_not_supported">Sorry! Your device do not support speech input</string>
     <string name="zero">0</string>
+    <string name="ArmTitle">ROBOTIC ARM CONTROLLER</string>i
+    <string name="Ip">192.168.1.6:8081</string>
 
 
 </resources>
