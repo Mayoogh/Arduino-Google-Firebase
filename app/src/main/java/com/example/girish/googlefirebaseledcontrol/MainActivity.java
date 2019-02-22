@@ -6,6 +6,7 @@ import java.util.Locale;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.net.Uri;
+import android.os.Handler;
 import android.text.InputType;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
@@ -35,7 +36,6 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
-
     Button forward, backward, left, right, topL, topR, bottomL, bottomR;
     ImageButton micBtn, cammeraBtn, armBtn;
     Switch speed;
@@ -44,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
     WebView myWebView;
     String temp_status, smoke_status, humidity_status;
     private final int REQ_CODE_SPEECH_INPUT = 100;
-
-
 
     @SuppressLint("ClickableViewAccessibility")
     @Override
@@ -288,56 +286,67 @@ public class MainActivity extends AppCompatActivity {
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     speech_txt.setText(result.get(0));
                     speech_txt.setInputType(InputType.TYPE_CLASS_TEXT);
-                    if (result.get(0).equals("forward")){
-                        Toast.makeText(getApplicationContext(), "Moving Forward", Toast.LENGTH_SHORT).show();
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("S1");
-                        myRef.setValue(1);
+                    switch (result.get(0)) {
+                        case "forward": {
+                            Toast.makeText(getApplicationContext(), "Moving Forward", Toast.LENGTH_SHORT).show();
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference("S1");
+                            myRef.setValue(1);
+                            break;
+                        }
+                        case "backward": {
+                            Toast.makeText(getApplicationContext(), "Moving Backward", Toast.LENGTH_SHORT).show();
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference("S1");
+                            myRef.setValue(2);
+                            break;
+                        }
+                        case "right": {
+                            Toast.makeText(getApplicationContext(), "Making hard right", Toast.LENGTH_SHORT).show();
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference("S1");
+                            myRef.setValue(3);
+                            break;
+                        }
+                        case "left": {
+                            Toast.makeText(getApplicationContext(), "Making hard left", Toast.LENGTH_SHORT).show();
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference("S1");
+                            myRef.setValue(4);
+                            break;
+                        }
+                        case "top left": {
+                            Toast.makeText(getApplicationContext(), "Turning left in forward direction", Toast.LENGTH_SHORT).show();
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference("S1");
+                            myRef.setValue(5);
+                            break;
+                        }
+                        case "top right": {
+                            Toast.makeText(getApplicationContext(), "Turning right in forward direction ", Toast.LENGTH_SHORT).show();
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference("S1");
+                            myRef.setValue(6);
+                            break;
+                        }
+                        case "bottom left": {
+                            Toast.makeText(getApplicationContext(), "Turning left in backward direction", Toast.LENGTH_SHORT).show();
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference("S1");
+                            myRef.setValue(7);
+                            break;
+                        }
+                        case "bottom right": {
+                            Toast.makeText(getApplicationContext(), "Turning right in backward direction", Toast.LENGTH_SHORT).show();
+                            FirebaseDatabase database = FirebaseDatabase.getInstance();
+                            DatabaseReference myRef = database.getReference("S1");
+                            myRef.setValue(8);
+                            break;
+                        }
+                        default:
+                            Toast.makeText(getApplicationContext(), "Unknown command", Toast.LENGTH_SHORT).show();
+                            break;
                     }
-                    else if (result.get(0).equals("backward")){
-                        Toast.makeText(getApplicationContext(), "Moving Backward", Toast.LENGTH_SHORT).show();
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("S1");
-                        myRef.setValue(2);
-                    }
-                    else if (result.get(0).equals("right")){
-                        Toast.makeText(getApplicationContext(), "Making hard right", Toast.LENGTH_SHORT).show();
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("S1");
-                        myRef.setValue(3);
-                    }
-                    else if (result.get(0).equals("left")){
-                        Toast.makeText(getApplicationContext(), "Making hard left", Toast.LENGTH_SHORT).show();
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("S1");
-                        myRef.setValue(4);
-                    }
-                    else if (result.get(0).equals("top left")){
-                        Toast.makeText(getApplicationContext(), "Turning left in forward direction", Toast.LENGTH_SHORT).show();
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("S1");
-                        myRef.setValue(5);
-                    }
-                    else if (result.get(0).equals("top right")){
-                        Toast.makeText(getApplicationContext(), "Turning right in forward direction ", Toast.LENGTH_SHORT).show();
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("S1");
-                        myRef.setValue(6);
-                    }
-                    else if (result.get(0).equals("bottom left")){
-                        Toast.makeText(getApplicationContext(), "Turning left in backward direction", Toast.LENGTH_SHORT).show();
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("S1");
-                        myRef.setValue(7);
-                    }
-                    else if (result.get(0).equals("bottom right")){
-                        Toast.makeText(getApplicationContext(), "Turning right in backward direction", Toast.LENGTH_SHORT).show();
-                        FirebaseDatabase database = FirebaseDatabase.getInstance();
-                        DatabaseReference myRef = database.getReference("S1");
-                        myRef.setValue(8);
-                    }
-                    else
-                        Toast.makeText(getApplicationContext(), "Unknown command", Toast.LENGTH_SHORT).show();
                 }
                 break;
             }
@@ -371,8 +380,9 @@ public class MainActivity extends AppCompatActivity {
         Intent myIntent = new Intent(MainActivity.this,
                 ArmActivity.class);
         startActivity(myIntent);
-
-
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("S1");
+        myRef.setValue(9);
     }
 
     public void On_Click_Camera(View view) {
